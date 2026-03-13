@@ -1,5 +1,6 @@
-*   {
-    font-family: courier;
+*  @font-face {
+  font-family: 'norskemono';
+  src: URL('fonts\Store Norske Nord Mono Trial\NordMonoTrialSN-Book.otf') ;
 }
 
 body {
