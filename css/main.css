@@ -100,7 +100,6 @@ a.link:hover{
 
 a.link:active{
     color: rgb(25, 126, 72);
-    text-decoration: none;
 }
 
 #BG-container {
