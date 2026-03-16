@@ -12,7 +12,6 @@ body {
 
 #main1{
     font-size: 24px;
-    text-align: left;
     margin: 0 auto;
     width: 50%;
     height: 300px;
@@ -25,7 +24,7 @@ body {
 
 #main2{
     font-size: 13px;
-    text-align: right;
+    text-align: left;
     width: 600px;
     height: 500px;
     position: absolute;
@@ -108,4 +107,64 @@ a.link:active{
 	width: 600px;
 	background-color: #dedede;
 	margin: 0 auto;
+}
+
+/* image base style */
+
+.img{
+  position:absolute;
+  width:18vw;
+  max-width:320px;
+  height:auto;
+  object-fit:cover;
+}
+
+/* placements */
+
+.img1{
+  top:25vh;
+  left:8vw;
+}
+
+.img2{
+  top:22vh;
+  right:8vw;
+}
+
+.img3{
+  top:55vh;
+  left:50%;
+  transform:translateX(-50%);
+  width:25vw;
+}
+
+.img4{
+  top:95vh;
+  right:10vw;
+}
+
+.img5{
+  top:110vh;
+  left:10vw;
+}
+
+
+/* Mobile */
+
+@media (max-width:600px){
+
+.canvas{
+  min-height:20vh;
+  font-size: 24px;
+  margin: 0 auto;
+  width: 50%;
+  height: 300px;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+.img{
+  width:30vw;
+}
 }
