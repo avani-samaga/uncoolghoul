@@ -1,4 +1,5 @@
-* 
+ @import url('https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap');
+
 body {
     font-family: "Xanh Mono", monospace;
     font-style: normal;
@@ -7,7 +8,6 @@ body {
     background-size: cover;
     background-position: center;
     font-size: 1.25rem;
-
 }
 
 

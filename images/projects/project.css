@@ -1,0 +1,226 @@
+/* RESET */
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: "Xanh Mono", monospace;
+    font-style: normal;
+    color: black;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    font-size: 1.25rem;
+}
+
+/* GLOBAL SPACING */
+section {
+  padding: 80px 8%;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.hero-left {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-right {
+  flex: 1;
+  min-width: 280px;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  background: #a8c3d8;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 4vw, 48px);
+  margin-bottom: 10px;
+}
+
+.link {
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+.meta p {
+  margin-bottom: 5px;
+}
+
+.description {
+  margin: 25px 0;
+  opacity: 0.8;
+  max-width: 500px;
+}
+
+.signature {
+  margin-top: 30px;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(135deg, #f8cdda, #fcb69f);
+}
+
+/* PACKAGE */
+.package {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.package-left,
+.package-right {
+  flex: 1;
+  min-width: 280px;
+}
+
+.image-large {
+  width: 100%;
+  height: 450px;
+  background: #ccc;
+}
+
+/* REMOVE BOX LOOK */
+.card {
+  padding: 0;
+  border: none;
+}
+
+.card h3 {
+  margin-bottom: 30px;
+}
+
+/* CLEAN ROW LAYOUT */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 40px;
+  margin-bottom: 25px;
+}
+
+.row span {
+  min-width: 140px;
+  opacity: 0.6;
+}
+
+.row p,
+.row ul {
+  flex: 1;
+}
+
+.row ul {
+  list-style: none;
+}
+
+.row li {
+  margin-bottom: 6px;
+}
+
+.row li::before {
+  content: "• ";
+  opacity: 0.6;
+}
+
+/* PROCESS */
+.process h2 {
+  margin-bottom: 40px;
+}
+
+.weeks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.week {
+  flex: 1;
+  min-width: 180px;
+}
+
+.week h4 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.week ul {
+  list-style: none;
+}
+
+.week li {
+  margin-bottom: 6px;
+  opacity: 0.8;
+}
+
+/* FAQ */
+.faq h2 {
+  margin-bottom: 30px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+details {
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+}
+
+summary {
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+details p {
+  opacity: 0.7;
+  padding-bottom: 10px;
+}
+
+/* 📱 MOBILE FIRST STACKING */
+@media (max-width: 768px) {
+  section {
+    padding: 50px 6%;
+  }
+
+  .hero,
+  .package {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .weeks {
+    flex-direction: column;
+  }
+
+  .image-placeholder,
+  .image-large {
+    height: 250px;
+  }
+}
