@@ -14,7 +14,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    font-size: 1.25rem;
+    font-size: 0.9rem;
 }
 
 /* GLOBAL SPACING */
@@ -224,3 +224,33 @@ details p {
     height: 250px;
   }
 }
+
+a.link{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 13px;
+    padding: 5px;
+}
+
+a.link:link{
+    color: #000000;
+    text-decoration: none;
+}
+
+a.link:visited{
+    color: #6022be;
+    text-decoration: none;
+}
+
+a.link:hover{
+    color: rgb(89, 220, 57);
+    text-decoration: none;
+    font-style: italic;
+    -webkit-transform: scale(2);
+    transform: scale(1.2);
+}
+
+a.link:active{
+    color: rgb(106, 116, 111);
+}
+
