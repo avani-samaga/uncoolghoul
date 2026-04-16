@@ -3,47 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>/about</title>
+<title>/process</title>
 
 <link rel="stylesheet" href="css/main.css">
 <link rel="icon" href="images/favicon.ico">
 <script src="script.js"></script>
+<script src="viewer.js"></script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap');
 
-/* =========================
-   BASE
-========================= */
-
-body {
-  margin: 0;
-  font-family: 'Xanh Mono', monospace;
-  overflow-x: hidden;
-  font-size: 0.8rem;
-  line-height: 1.4;
-  color: #000;
-  min-height: 100vh;
-}
-
-/* =========================
-   NAV
-========================= */
-
-ul {
-  padding-top: 2%;
-  z-index: 100;
-}
-
-/* =========================
-   ASCII BACKGROUND
-========================= */
-
+/* ASCII */
 .ascii-bg {
-  position: fixed;
-  top: 30%;
-  left: 2%;
-  width: 100%;
+  position: absolute;
+  top: 8%;
+  right: 2%;
+  left: auto;
+  width: auto;
   height: 100%;
   z-index: -1;
   pointer-events: none;
@@ -51,41 +27,21 @@ ul {
 }
 
 .ascii-bg pre {
+  font-family: monospace;
   font-size: 12px;
   line-height: 16px;
-  white-space: pre;
-  font-family: monospace;
-  color: rgb(119, 112, 112);
+  color: rgb(119,112,112);
 }
 
-/* =========================
-   MAIN LAYOUT (CENTERING FIX)
-========================= */
-
-.about-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;   
-  gap: 20px;
-  padding-top: 5%;
-  min-height: 70vh;      
-  width: 100%;
+/* MAIN LAYOUT */
+.container {
+  width: 700px;
+  margin: 0 auto;
+  padding-top: 8%;
 }
 
-/* image */
-.about-media {
-  flex: 0 0 350px;
-}
-
-.about-media img {
-  width: 350px;
-  display: block;
-}
-
-/* text */
-.about-text {
-  flex: 0 0 300px;
-  text-align: right;
+.section {
+  margin-bottom: 60px;
 }
 
 /* =========================
@@ -94,209 +50,119 @@ ul {
 
 @media (max-width: 700px) {
 
-  .about-flex {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: auto;
-    padding-top: 5%;
-  }
-
-  .about-text {
-    text-align: right;
-    width: 90%;
-    order: 2;
-  }
-
-  .about-media {
-    width: 60%;
-    order: 1;
+  .container {
+    width: 70%;
+    padding: 0 5%;
+    padding-top: 15%;
   }
 
   .ascii-bg pre {
-    font-size: 2.5vw;
-    line-height: 3.5vw;
-    opacity: 60%;
+    font-size: 1.5vw;
+    line-height: 2.5vw;
+    opacity: 50%;
   }
 }
 </style>
-
 </head>
 
 <body>
 
 <script>NekoType="orange"</script>
 <h1 id="nl">
-  <script src="https://webneko.net/n20171213.js"></script>
-  <a href="https://webneko.net">Neko</a>
+<script src="https://webneko.net/n20171213.js"></script>
+<a href="https://webneko.net">Neko</a>
 </h1>
 
-<!-- ASCII -->
-<div class="ascii-bg">
-<pre>
-⠑⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠌⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠸⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠙⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠹⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠈⣿⣿⣷⣄⠀⠀⠀⢀⣠⣾⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣷⣶⣶⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢨⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠠⠤⣴⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠉⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣦⣤⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⢷⣶⣶⣤⣤⣄⣀⣀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⣸⣿⣿⠿⠿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠁⠀⠒
-⠀⠀⠀⠀⠀⣠⠟⠋⠁⠀⠀⠀⠙⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠐⠁⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠱⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-</pre>
-</div>
-
 <!-- NAV -->
-<ul>
+<ul style="padding-top: 2%">
   <li><a href="projects.html">projects</a></li>
-  <li><a class="active" href="#about">about</a></li>
-  <li><a href="process.html">process</a></li>
+  <li><a href="about.html">about</a></li>
+  <li><a class="active" href="process.html">process</a></li>
   <li><a href="blog.html">blog</a></li>
   <li><a href="life.html">misc.</a></li>
   <li><a href="https://kirin.atabook.org/">guestbook</a></li>
 </ul>
+<!-- ASCII -->
+<div class="ascii-bg">
+<pre>
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠀⠀⠀⡠⠴⠒⠋⠉⠉⠙⠡⣒⡢⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⢀⡴⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠤⡘⠣⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠒⠤⡑⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠪⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠾⢹⢨⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡟⠁⠸⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⢤⠤⣘⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⡇⠀⠘⠈⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡕⠊⠈⠉⠐⢿⡂⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠁⠃⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡍⠀⠀⠀⠀⠀⠀⢻⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠠⢤⠼⣼⣀⣠⡇⠀⠚⢢⢤⠤⣤⣄⣀⣀⣀⣀⡄⠀⠀⠀⠀⠻⣦⣨⠦⠀⠀⠀⢣⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⠁⠀⠘⡧⠀⠆⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠉⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢣⠀⠀⠀⢸⠅⢔⡛⢣⣢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡠⠤⠒⢒⡟⠭⠭⢉⡉⠱⠲⡀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠳⣦⣰⢸⠀⠈⠉⠋⢸⡃⠀⠀⠀⠀⠀⠀⠀⣠⡔⠋⠁⠀⠀⢀⡚⠁⠀⠀⠀⠈⠳⣆⢱⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢹⠦⣤⠀⠀⣠⡞⠀⠀⠀⠀⠀⠀⢀⣺⠋⠀⠀⠀⠀⠀⡼⠁⠀⠀⠀⠀⠀⠀⢰⢼⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⡆⠀⠉⠉⠈⠀⠀⠀⠀⠀⠀⠀⡾⠁⠀⠀⠀⠀⠀⣰⠍⠀⠀⠀⠀⠀⠀⠀⢨⢸⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠇⠀⠀⠀⠀⢀⣼⠃⠀⠀⠀⠀⠀⠀⠀⠀⡸⡹⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⢀⣴⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⢀⢣⡁⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠗⠤⠔⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣜⠇⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠎⡏⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⣧⠏⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⠀⢀⣴⠗⠉⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣣⡾⠊⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⣻⣵⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠖⠉⠀⢸⢸⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠁⠀⠀⡀⣼⠙⢦⡤⢤⣤⣄⣀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⠉⠀⠀⠉⠉⠉⠲⣀⡞⠉⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⢲⠖⠒⠋⠉⣾⢃⣆⠀⠀⠀⠀⠀⠀⢣⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⡿⠛⠀⠀⠀⠀⠀⠸⡏⠀⠈⢺⢆⠀⠀⠀⠀⣟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢾⠏⠁⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠈⢫⢢⠀⠀⠀⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢮⠏⠀⠀⠀⠀⠀⠀⠀⠀⢸⡀⠀⠀⠀⠈⢇⠇⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣗⡀⠀⠀⠀⠈⣿⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢦⡀⠀⠀⠀⢸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⣄⡀⠀⡸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠇⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠹⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⣶⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢗⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢽⣤⡀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠘⢳⠦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</pre>
+</div>
 
 <!-- CONTENT -->
-<div class="about-flex">
+<div class="container">
 
-  <div class="about-media">
-    <img id="aboutImage" src="images/me.png">
+  <div class="section" style="text-align: left; padding-left: 10%;">
+    <h3>‧₊˚✧{approaching a problem}✧˚₊‧</h3>
+
+    as an exhibition designer, my process starts with<br>
+    the idea of <i>staging — </i><br><br>
+
+    (1) how can we communicate through an experiential lens?<br><br>
+    (2) how do we make sure our ideas are understood at a high level?<br><br>
+    (3) how can we design with intention?<br>
   </div>
 
-  <div class="about-text" id="aboutText">
-          <h3>‧₊˚✧{avani samaga}✧˚₊‧</h3>
-
-      is an exhibition & spatial designer <br>
-      who loves and cares about--<br><br>
-
-      representing data differently,<br>
-      to inform real change in perspective<br><br>
-
-      encouraging creativity and play<br>
-      as an integral part of the process<br><br>
-
-      and experimenting!<br><br><br>
-
-      <div class="tooltip"><i>☏ hire me please</i> //</div>
-
-      <a class="link" href="mailto:samaga.avani@gmail.com">[email me]</a>
-      <a class="link" href="https://www.behance.net/avanisamaga1" target="_blank">[behance]</a>
-      <a class="link" href="https://www.linkedin.com/in/avani-samaga/" target="_blank">[linkedin]</a>
-
-      <br><br>
-      <a class="link" href="#" id="swapBtn">[<<<]</a>
+  <div>
+    <img src="images/process.png" class="clickable-image" style="max-width: 50vw; text-align: center;" >
   </div>
 
+  <div class="section" style="text-align: right; padding-right: 8%;">
+    <br><br><h3>‧₊˚✧{executing ideas}✧˚₊‧</h3>
+
+    coherence and concreteness is the essence of a story.<br>
+    without a solid and <i>related</i> medium that interacts & supplements<br>
+    the concept, the experience will always be lackluster.<br><br>
+
+    (1) finding a story<br><br>
+    (2) applying concept to medium, and medium to concept<br><br>
+    (3) process of iteration<br>
+  </div>
+
+  <!-- SYMBOL -->
+  <div style="text-align:center; padding-bottom: 15%;">
+    ⋆♤˚⟡˖ ࣪🃁 🂺 ˖⟡˚ ♤ ⋆
+  </div>
 </div>
 
 </body>
-
-<script>
-const states = [
-  {
-    img: "images/me.png",
-    text: `
-      <h3>‧₊˚✧{avani samaga}✧˚₊‧</h3>
-
-      is an exhibition & spatial designer <br>
-      who loves and cares about--<br><br>
-
-      representing data differently,<br>
-      to inform real change in perspective<br><br>
-
-      encouraging creativity and play<br>
-      as an integral part of the process<br><br>
-
-      and experimenting!<br><br><br>
-
-      <div class="tooltip"><i>☏ hire me please</i> //</div>
-
-      <a class="link" href="mailto:samaga.avani@gmail.com">[email me]</a>
-      <a class="link" href="https://www.behance.net/avanisamaga1" target="_blank">[behance]</a>
-      <a class="link" href="https://www.linkedin.com/in/avani-samaga/" target="_blank">[linkedin]</a>
-
-      <br><br>
-      <a class="link" href="#" id="swapBtn">[>>>]</a>
-    `
-  },
-  {
-    img: "images/maus.png", 
-    text: `
-<h3>‧₊˚✧{more about me}✧˚₊‧</h3>
-   <div style="text-align:left;">
-      i like working across mediums,<br>
-      breaking structure,<br>
-      and playing with my cat.<br><br><br>
-    </div>
-    <table style="width:100%; text-align:left;">
-      <tr>
-        <td style="vertical-align:top; padding-right:10px;">
-           <i> currently exploring:<br><br><br>
-            favorite pokemon:<br><br>
-            where i'm from:<br><br>
-            hobbies:<br> </i>
-        </td>
-
-        <td style="vertical-align:top;">
-          
-          - spatial storytelling<br>
-          - interactive systems<br>
-          - the indie web<br>
-          <br>
-          bulbasaur, chandelure, sableye
-          <br><br>
-          wuhu island
-          <br><br>
-          board games, video games, knitting
-        </td>
-      </tr>
-    </table>
-    <br>
-
-    <a class="link" href="#" id="swapBtn">[<<<]</a>
-    `
-  }
-];
-
-let current = 0;
-
-function swapContent(e) {
-  e.preventDefault();
-
-  current = (current + 1) % states.length;
-
-  const img = document.getElementById("aboutImage");
-  const text = document.getElementById("aboutText");
-
-  img.src = states[current].img;
-  img.style.padding = (states[current].img.includes("maus")) ? "30px" : "0px";
-  text.innerHTML = states[current].text;
-
-  // rebind button after innerHTML swap
-  document.getElementById("swapBtn").addEventListener("click", swapContent);
-}
-
-// initial bind
-document.getElementById("swapBtn").addEventListener("click", swapContent);
-</script>
-
 </html>

@@ -16,6 +16,10 @@ body {
     background-position: center;
     font-size: 0.9rem;
 }
+ul {
+  padding-top: 2%;
+  z-index: 100;
+}
 
 /* GLOBAL SPACING */
 section {
