@@ -1,65 +1,168 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>/process</title>
+
 <link rel="stylesheet" href="css/main.css">
-<link rel="icon" href="images\favicon.ico">
+<link rel="icon" href="images/favicon.ico">
 <script src="script.js"></script>
+<script src="viewer.js"></script>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap');
+
+/* ASCII */
+.ascii-bg {
+  position: absolute;
+  top: 8%;
+  right: 2%;
+  left: auto;
+  width: auto;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ascii-bg pre {
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 16px;
+  color: rgb(119,112,112);
+}
+
+/* MAIN LAYOUT */
+.container {
+  width: 700px;
+  margin: 0 auto;
+  padding-top: 8%;
+}
+
+.section {
+  margin-bottom: 60px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .container {
+    width: 70%;
+    padding: 0 5%;
+    padding-top: 15%;
+  }
+
+  .ascii-bg pre {
+    font-size: 1.5vw;
+    line-height: 2.5vw;
+    opacity: 50%;
+  }
+}
 </style>
 </head>
-<body>
-  <script>NekoType="orange"</script>
-<h1 id=nl><script src="https://webneko.net/n20171213.js"></script><a 
-href="https://webneko.net">Neko</a></h1>
 
-  <ul style="padding-top: 2%; z-index: 100;">
-    <li><a href="projects.html">projects</a></li>
-    <li><a href="about.html">about</a></li>
-    <li><a class="active" href="process.html">process</a></li>
-    <li><a href="blog.html">blog</a></li>
-    <li><a href="life.html">misc.</a></li>
-    <li><a href="https://kirin.atabook.org/">guestbook</a></li>
-  </ul>
-<div id="main2">
-  <table width="700px" style="margin: 0 auto;padding-right: 40%">
-    <tbody><tr>
-	  <td width="300px" style="vertical-align: center; padding-right: 40%; text-align: left;">
-      <h3>‧₊˚✧{approaching a problem}✧˚₊‧</h3>
-            as an exhibition designer, my process starts with<br> the idea of <i>staging — </i>
-            <br><br>
-            <br>(1) how can we communicate through an experiential lens?<br>
-            <br>(2) how do we make sure our ideas are understood at a high level?<br>
-            <br>(3) how can we design with intention?</p><br>
-  		<br><br>
-    	</tr>
-    </td></tbody>
+<body>
+
+<script>NekoType="orange"</script>
+<h1 id="nl">
+<script src="https://webneko.net/n20171213.js"></script>
+<a href="https://webneko.net">Neko</a>
+</h1>
+
+<!-- NAV -->
+<ul style="padding-top: 2%">
+  <li><a href="projects.html">projects</a></li>
+  <li><a href="about.html">about</a></li>
+  <li><a class="active" href="process.html">process</a></li>
+  <li><a href="blog.html">blog</a></li>
+  <li><a href="life.html">misc.</a></li>
+  <li><a href="https://kirin.atabook.org/">guestbook</a></li>
+</ul>
+<!-- ASCII -->
+<div class="ascii-bg">
+<pre>
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠀⠀⠀⡠⠴⠒⠋⠉⠉⠙⠡⣒⡢⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⢀⡴⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠤⡘⠣⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠒⠤⡑⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠪⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠾⢹⢨⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡟⠁⠸⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⢤⠤⣘⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⡇⠀⠘⠈⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡕⠊⠈⠉⠐⢿⡂⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠁⠃⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡍⠀⠀⠀⠀⠀⠀⢻⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠠⢤⠼⣼⣀⣠⡇⠀⠚⢢⢤⠤⣤⣄⣀⣀⣀⣀⡄⠀⠀⠀⠀⠻⣦⣨⠦⠀⠀⠀⢣⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⠁⠀⠘⡧⠀⠆⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠉⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢣⠀⠀⠀⢸⠅⢔⡛⢣⣢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡠⠤⠒⢒⡟⠭⠭⢉⡉⠱⠲⡀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠳⣦⣰⢸⠀⠈⠉⠋⢸⡃⠀⠀⠀⠀⠀⠀⠀⣠⡔⠋⠁⠀⠀⢀⡚⠁⠀⠀⠀⠈⠳⣆⢱⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢹⠦⣤⠀⠀⣠⡞⠀⠀⠀⠀⠀⠀⢀⣺⠋⠀⠀⠀⠀⠀⡼⠁⠀⠀⠀⠀⠀⠀⢰⢼⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⡆⠀⠉⠉⠈⠀⠀⠀⠀⠀⠀⠀⡾⠁⠀⠀⠀⠀⠀⣰⠍⠀⠀⠀⠀⠀⠀⠀⢨⢸⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠇⠀⠀⠀⠀⢀⣼⠃⠀⠀⠀⠀⠀⠀⠀⠀⡸⡹⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⢀⣴⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⢀⢣⡁⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠗⠤⠔⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣜⠇⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠎⡏⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⣧⠏⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⠀⢀⣴⠗⠉⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣣⡾⠊⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⣻⣵⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠖⠉⠀⢸⢸⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠁⠀⠀⡀⣼⠙⢦⡤⢤⣤⣄⣀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⠉⠀⠀⠉⠉⠉⠲⣀⡞⠉⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⢲⠖⠒⠋⠉⣾⢃⣆⠀⠀⠀⠀⠀⠀⢣⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⡿⠛⠀⠀⠀⠀⠀⠸⡏⠀⠈⢺⢆⠀⠀⠀⠀⣟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢾⠏⠁⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠈⢫⢢⠀⠀⠀⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢮⠏⠀⠀⠀⠀⠀⠀⠀⠀⢸⡀⠀⠀⠀⠈⢇⠇⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣗⡀⠀⠀⠀⠈⣿⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢦⡀⠀⠀⠀⢸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⣄⡀⠀⡸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠇⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠹⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⣶⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢗⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢽⣤⡀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠘⢳⠦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</pre>
 </div>
-<div id="main_image" style="align-items: center;">
-        <tbody>
-        <td width="800px">
-            <img src="images\process.png" width="790px">
-            <br><br>
-  		<br>
-        </td>
-	</tbody>
-    <tbody><tr>
-	  <td width="500px" style="vertical-align: right; padding-right: 20%; text-align: right;">
-      <h3>‧₊˚✧{executing ideas}✧˚₊‧</h3>
-            coherence and concreteness is the essence of a story. <br>
-            without a solid and <i>related</i> medium that interacts & supplements <br>the 
-            concept, the experience will always be lackluster.
-            <br><br>
-            <br>(1) finding a story <br>
-            <br>(2) applying concept to medium, and medium to concept<br>
-            <br>(3) process of iteration</p><br>
-  		<br><br>
-    	</tr></td>
-        <td width="500px" style="padding-right: 20%;">
-            <p style="text-align: center;">⋆♤˚⟡˖ ࣪🃁  🂺 ˖⟡˚ ♤ ⋆</p><br><br>
-  		<br>
-        </td>
-    </tbody>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <div class="section" style="text-align: left; padding-left: 10%;">
+    <h3>‧₊˚✧{approaching a problem}✧˚₊‧</h3>
+
+    as an exhibition designer, my process starts with<br>
+    the idea of <i>staging — </i><br><br>
+
+    (1) how can we communicate through an experiential lens?<br><br>
+    (2) how do we make sure our ideas are understood at a high level?<br><br>
+    (3) how can we design with intention?<br>
+  </div>
+
+  <div>
+    <img src="images/process.png" class="clickable-image" style="max-width: 50vw; text-align: center;" >
+  </div>
+
+  <div class="section" style="text-align: right; padding-right: 8%;">
+    <br><br><h3>‧₊˚✧{executing ideas}✧˚₊‧</h3>
+
+    coherence and concreteness is the essence of a story.<br>
+    without a solid and <i>related</i> medium that interacts & supplements<br>
+    the concept, the experience will always be lackluster.<br><br>
+
+    (1) finding a story<br><br>
+    (2) applying concept to medium, and medium to concept<br><br>
+    (3) process of iteration<br>
+  </div>
+
+  <!-- SYMBOL -->
+  <div style="text-align:center; padding-bottom: 15%;">
+    ⋆♤˚⟡˖ ࣪🃁 🂺 ˖⟡˚ ♤ ⋆
+  </div>
 </div>
+
+</body>
+</html>
