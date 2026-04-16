@@ -7,7 +7,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
 
@@ -105,8 +105,8 @@ a.link:active{
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
-  width: 200px;
+  padding: 1%;
+  width: 100px;
   height: 100%; 
   position: fixed; 
   overflow: auto; 

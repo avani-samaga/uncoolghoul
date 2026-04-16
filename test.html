@@ -1,234 +1,401 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>uncoolghoul</title>
-
+<title>/life</title>
 <link rel="stylesheet" href="css/main.css">
 <link rel="icon" href="images/favicon.ico">
 <script src="script.js"></script>
+</head>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap');
 
-/* Base */
 body {
-  margin: 0;
+  margin: 0 auto;
   font-family: 'Xanh Mono', monospace;
-  background: #ffffff00;
-  overflow-x: hidden;
-  font-size: 1rem; 
-  line-height: 1;
+  background-image: url(images/bg2.jpg);
+  color: #000;
 }
 
-/* ASCII  */
-.ascii-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.ascii-bg pre {
-  font-size: 12px;
-  line-height: 8px;
-  white-space: pre;
-  font-family: monospace; 
-  color: rgb(119, 112, 112);
-}
-
-/* CENTER WRAPPER */
+/* PAGE CENTER */
 .page {
   display: flex;
   justify-content: center;
-  align-items: center;   
-  min-height: 100vh;     
-  width: 100%;
-}
-/* MAIN CONTENT */
-.container {
-  max-width: 900px;
   padding: 40px 20px;
-  margin-left: 25%;
-  margin-top: 20vh;
 }
 
-.main-wrapper {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-}
-
-/* Left column */
-.nav-section {
-  min-width: 200px;
-  margin-top: 5%;
-}
-
-/* Right column */
-.image-section img {
-  max-width: 300px;
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  max-width: 1000px;
   width: 100%;
-  height: auto;
-  border: 1px solid black;
 }
 
-/* Links */
-.link {
-  display: block;
-  margin: 4px 0;
-  text-decoration: none;
-  color: inherit;
+/* BOX = 3x3 CANVAS */
+.box {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  box-shadow: 0 0 0 1px #00000024;
+  overflow: hidden;
+  padding: 15px;
 }
 
-/* Responsive */
+/* IMAGES */
+.box img {
+  width: 90%;
+  justify-self: center;
+  align-self: center;
+
+  /* dither effect instead of grayscale */
+  image-rendering: pixelated;
+  cursor: pointer;
+  transform: rotate(var(--rot, 0deg));
+}
+
+/* TEXT MODE */
+.box .text {
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 3;
+
+  padding: 5px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* FULL VIEWER OVERLAY */
+/* FULL OVERLAY */
+.viewer {
+  position: fixed;
+  inset: -5%;
+  background: rgba(255, 255, 255, 0.136);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* IMAGE FRAME (center) */
+.viewer-inner {
+  width: 60vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.552);
+  border: 1px solid #000;
+  position: relative;
+}
+
+/* IMAGE */
+.viewer-inner img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* CONTROLS */
+
+/* CLOSE */
+.close-btn {
+  position: absolute;
+  top: 3vh;
+  right: 3vw;
+}
+
+/* BACK */
+.back-btn {
+  position: absolute;
+  left: 3vw;
+  top: 50%;
+}
+
+/* NEXT */
+.next-btn {
+  position: absolute;
+  right: 3vw;
+  top: 50%;
+}
+
+/* MOBILE */
 @media (max-width: 700px) {
-  .main-wrapper {
-    flex-direction: column;
-    margin-top: -17vh;
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
-  .image-section img {
-    max-width: 70%;
+  .box {
+    aspect-ratio: auto;
+    height: 500px;
   }
-  
-  .ascii-bg pre {
-  opacity: 60%;
+
+  .box img {
+    width: 80%;
+  }
+
+  .viewer-inner {
+    width: 90vw;
+    height: 70vh;
+  }
+
+  /* keep close in top-right */
+  .close-btn {
+    top: 3vh;
+    right: 4vw;
+  }
+
+  .back-btn,
+  .next-btn {
+    top: auto;
+    transform: none;
+  }
+
+  .back-btn {
+    position: absolute;
+    bottom: 3.5vh;
+    left: 10vw;
+  }
+
+  .next-btn {
+    position: absolute;
+    bottom: 3.5vh;
+    right: 10vw;
   }
 }
+
 </style>
 </head>
 
 <body>
+<ul style="padding-top: 2%; padding-left: 1.5%; z-index: 100;">
+    <li><a href="projects.html">projects</a></li>
+    <li><a href="about.html">about</a></li>
+    <li><a href="process.html">process</a></li>
+    <li><a href="blog.html">blog</a></li>
+    <li><a class="active" href="#life">misc.</a></li>
+    <li><a href="https://kirin.atabook.org/">guestbook</a></li>
+  </ul>
 
-<script>NekoType="orange"</script>
-<h1 id="nl">
-  <script src="https://webneko.net/n20171213.js"></script>
-  <a href="https://webneko.net">Neko</a>
-</h1>
+<div class="page">
+  <div class="grid">
 
-<!-- ASCII -->
-<div class="ascii-bg">
-<pre>
-⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⣠⣤⡦⣤⣬⣍⡉⠒⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀ ⣠⠒⠉⠁⠀⠀⠈⠙⠻⣦⣜⠳⣄⢀⣀⣀⣠⣄⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠
-
-⠀⡜⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⢿⡖⠛⣯⠀⠀⣀⣀⣀⣀⡀⠈⠉⠓⠒⠠⠤⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣯⠙⣦⡇
-
-⣼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠃⣤⣽⣶⠾⣿⠉⠉⠉⠉⠉⠉⠙⠳⢤⡄⠤⣄⡀⠉⠙⠒⠶⢤⣤⣀⡀⠀⠀⠀⠀⠨⠍⢀⡾⠃
-
-⢿⠀⠀⠀⠀⠀⠀⠀⠀⡠⠊⣠⣶⣿⠋⠉⣏⠀⢹⡀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠣⡀⠹⡀⠀⠀⠀⠀⠀⠈⠉⠉⠛⡓⣲⣖⡚⠉⠐⠁
-
-⠘⣆⢀⣤⡀⠀⠀⠀⡼⢥⣶⠿⠙⠀⠀⠀⡇⠀⢸⡇⠀⠀⠀⠀⢠⣦⣤⠀⠀⠀⢹⡀⠙⣄⠀⠀⠀⠀⠀⠀⢠⠃⠁⠀⠀⣹⠀⠀⠀
-
-⠀⠈⠻⣿⡟⠀⠀⣾⣽⡿⠏⠁⠀⠀⠀⡸⠁⠀⣾⠀⠀⠀⠀⠀⢯⠙⠃⠀⠀⠀⣸⡏⡂⡀⠃⢄⡀⠀⠀⠈⠓⠂⠀⢀⠖⠁⠀⠀⢀
-
-⠀⠀⠀⠀⠀⠀⣑⣿⡟⠃⠀⠀⠀⠀⡴⠁⠀⣰⠏⠃⠀⠀⠀⠀⠘⢦⣄⣀⣠⡴⠃⠀⠠⢆⠀⠀⠉⠑⠒⠂⠒⠒⠊⠁⠀⠀⠀⠀⠀
-
-⠀⠀⠀⢀⠀⢀⣾⠟⠐⢲⡷⠶⢶⡞⠁⠀⣴⠟⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⠂⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⢰⢿⡿⣾⡏⠀⠀⠀⠁⢰⠏⠀⢀⡾⡉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⡗⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠸⣌⢠⡿⠄⠀⢀⣠⡶⠁⠀⡰⠏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠆⡆⠀⠀⠀⠀⠀⠀⣠⠂⠒⠐⠠⡀
-
-⠀⠀⠀⠈⣿⡟⠛⠋⢡⠞⠀⣠⠞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡏⠀⢑⢀⠀⠀⠀⠀⠂⢀⣠⡀⠀⠀⢘
-
-⠀⠀⢀⢠⡟⠀⠀⢠⠃⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠤⢄⠀⠀⠀⠀⠀⠀⡰⠁⠀⠀⠈⣄⠀⠀⠀⠡⣀⢀⠎⠀⠠⠁
-
-⠀⠀⡎⢸⠇⠀⠀⡏⠀⠀⠀⠀⣴⣗⠲⢤⠀⠀⠀⠀⠀⠀⠇⠁⠀⠀⢘⠀⠀⠀⠀⠀⣴⠃⠀⠀⠀⠀⠈⠑⠀⡀⠀⡀⢀⠠⠈⠀⠀
-
-⠀⢀⡇⣼⠀⠀⢸⡇⠀⠀⠀⠈⠛⠿⠃⠘⣧⠀⠀⠀⠀⠀⠈⠄⠀⠀⠈⠀⣀⣀⡴⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠘⡇⣧⠀⠀⠀⢷⡀⠀⠀⠀⠀⠀⢀⡼⠁⠀⠀⠀⠀⠀⠀⠀⠁⠁⠀⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⡇⢸⠀⠀⠀⠈⠻⢶⣤⣤⣤⠶⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⢃⠸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⢸⠀⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠸⡄⠘⣆⠀⠀⣰⣦⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠀⢧⠀⠉⠳⢤⣽⡿⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⢀⠸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠸⡆⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠀⢸⡘⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠀⠀⢧⢸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠀⠀⠸⡄⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠀⠀⠀⢇⠘⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠀⠀⠀⢸⠀⢹⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠀⠀⠀⠸⡄⠀⢷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠀⣠⡀⠈⡇⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⢸⢿⠇⠀⡇⠀⣸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠸⣄⣀⢰⣧⣴⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠀⠈⠙⢻⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠀⠀⠀⣼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠀⠀⢀⡿⠤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⢀⣠⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⢸⠿⠁⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠀⢰⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠀⡿⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⢸⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⡞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠰⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⢫⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠘⡄⠀⠀⢀⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠀⠘⠢⣀⣘⣿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-</pre>
-</div>
-
-<!-- CONTENT -->
-<div class="container">
-  <div class="main-wrapper">
-
-    <!-- LEFT -->
-    <div class="nav-section">
-      <h3>uncoolghoul</h3><br>
-      <a class="link" href="projects.html">projects</a><br>
-      <a class="link" href="about.html">about</a><br>
-      <a class="link" href="process.html">process</a><br>
-      <a class="link" href="blog.html">blog</a><br>
-      <a class="link" href="extras.html">misc.</a><br>
-      <a class="link" href="https://kirin.atabook.org/">guestbook</a>
+    <!-- TEXT BOX -->
+    <div class="box" data-count="text" data-seed="box1">
+      <div class="text">
+        <strong>archive note</strong><br><br>
+        this box contains only text.<br>
+        used for context, labels, or breaks in visual flow.
+      </div>
     </div>
 
-    <!-- RIGHT -->
-    <div class="image-section">
-      <img src="images/dithered-image.jpg" alt="preview">
+    <!-- 2 IMAGES -->
+    <div class="box" data-count="2" data-seed="box2">
+      <img src="images\misc\22.jpg">
+      <img src="images\misc\22.jpg">
+      <img src="images\misc\22.jpg">
+      <img src="images\misc\22.jpg">
+    </div>
+
+    <!-- 5 IMAGES -->
+    <div class="box" data-count="5" data-seed="box3">
+      <img src="images\misc\22.jpg">
+      <img src="images\misc\22.jpg">
+      <img src="images\misc\22.jpg">
+      <img src="images\misc\22.jpg">
+      <img src="images/img9.jpg">
+      <img src="images/img10.jpg">
+    </div>
+
+    <!-- 8 IMAGES -->
+    <div class="box" data-count="8" data-seed="box4">
+      <img src="images/img11.jpg">
+      <img src="images/img12.jpg">
+      <img src="images/img13.jpg">
+      <img src="images/img14.jpg">
+      <img src="images/img15.jpg">
+      <img src="images/img16.jpg">
+      <img src="images/img17.jpg">
+      <img src="images/img18.jpg">
+      <img src="images/img19.jpg">
     </div>
 
   </div>
 </div>
+
+<script>
+function seededRandom(seed) {
+  let x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+}
+
+document.querySelectorAll(".box").forEach((box, boxIndex) => {
+
+  const count = box.dataset.count;
+  const imgs = Array.from(box.querySelectorAll("img"));
+
+  // TEXT BOX → skip image logic
+  if (count === "text") return;
+
+  // 3x3 slots
+  let slots = Array.from({ length: 9 }, (_, i) => i);
+
+  // deterministic shuffle
+  for (let i = slots.length - 1; i > 0; i--) {
+    const r = seededRandom(i + boxIndex + box.dataset.seed.length) * (i + 1);
+    const j = Math.floor(r);
+    [slots[i], slots[j]] = [slots[j], slots[i]];
+  }
+
+  const maxImgs = Math.min(parseInt(count), 9);
+
+  imgs.slice(0, maxImgs).forEach((img, i) => {
+    const slot = slots[i];
+
+    const row = Math.floor(slot / 3);
+    const col = slot % 3;
+
+    img.style.gridRow = row + 1;
+    img.style.gridColumn = col + 1;
+
+  });
+
+  // hide extra images
+  imgs.slice(maxImgs).forEach(img => {
+    img.style.display = "none";
+  });
+  
+  /* store images per box */
+const boxData = [];
+
+/* collect + prepare images */
+document.querySelectorAll(".box").forEach((box, boxIndex) => {
+
+  const imgs = Array.from(box.querySelectorAll("img"));
+  const maxImgs = parseInt(box.dataset.count);
+
+  const slots = Array.from({ length: 9 }, (_, i) => i);
+
+  for (let i = slots.length - 1; i > 0; i--) {
+    const r = Math.sin(i + boxIndex + box.dataset.seed.length) * 10000;
+    const j = Math.floor((r - Math.floor(r)) * (i + 1));
+    [slots[i], slots[j]] = [slots[j], slots[i]];
+  }
+
+  const activeImgs = imgs.slice(0, maxImgs);
+  boxData.push(activeImgs);
+
+  activeImgs.forEach((img, i) => {
+    const slot = slots[i % 9];
+
+    img.style.gridRow = Math.floor(slot / 3) + 1;
+    img.style.gridColumn = (slot % 3) + 1;
+
+    const rot = (Math.sin(slot + boxIndex) * 10) - 5;
+    img.style.setProperty("--rot", `${rot}deg`);
+  });
+
+});
+
+/* viewer state */
+let currentList = [];
+let currentIndex = 0;
+
+/* OPEN VIEWER */
+function openViewer(list, index) {
+
+  currentList = list;
+  currentIndex = index;
+
+  document.querySelector(".viewer")?.remove();
+
+  const viewer = document.createElement("div");
+  viewer.className = "viewer";
+
+  const inner = document.createElement("div");
+  inner.className = "viewer-inner";
+
+  const img = document.createElement("img");
+  img.src = currentList[currentIndex].src;
+
+  const controls = document.createElement("div");
+  controls.className = "controls";
+  controls.innerHTML = `
+    <span id="back">(back)</span>
+    <span id="next">(next)</span>
+    <span id="close">(close)</span>
+  `;
+
+  inner.appendChild(controls);
+  inner.appendChild(img);
+  viewer.appendChild(inner);
+  document.body.appendChild(viewer);
+
+ /* controls */
+
+controls.innerHTML = `
+  <a class="link back-btn">(back)</a>
+  <a class="link next-btn">(next)</a>
+  <a class="link close-btn">(close)</a>
+`;
+
+inner.appendChild(controls);
+inner.appendChild(img);
+viewer.appendChild(inner);
+document.body.appendChild(viewer);
+
+/* close */
+controls.querySelector(".close-btn").onclick = (e) => {
+  e.preventDefault();
+  viewer.remove();
+};
+
+/* next */
+controls.querySelector(".next-btn").onclick = (e) => {
+  e.preventDefault();
+  currentIndex = (currentIndex + 1) % currentList.length;
+  img.src = currentList[currentIndex].src;
+};
+
+/* back */
+controls.querySelector(".back-btn").onclick = (e) => {
+  e.preventDefault();
+  currentIndex = (currentIndex - 1 + currentList.length) % currentList.length;
+  img.src = currentList[currentIndex].src;
+};
+
+  /* click outside closes */
+  viewer.onclick = (e) => {
+    if (e.target === viewer) viewer.remove();
+  };
+
+  /* ESC close */
+  document.onkeydown = (e) => {
+    if (e.key === "Escape") viewer.remove();
+  };
+}
+
+/* attach click handlers */
+document.querySelectorAll(".box").forEach((box, i) => {
+  const imgs = box.querySelectorAll("img");
+  const list = boxData[i];
+
+  imgs.forEach((img, idx) => {
+    img.addEventListener("click", () => {
+      openViewer(list, idx);
+    });
+  });
+});
+  
+});
+
+</script>
 
 </body>
 </html>
