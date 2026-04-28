@@ -145,7 +145,7 @@
 
   <div class="intro" >
     <p class="body" style="padding-top: 40%;">
-      projects i have worked on recently. some of these are branding and 
+      all projects i have worked on recently. some of these are branding and 
       website projects, others are exhibits and workshops i conducted.
       aside from art direction, i also illustrate.
       <br><br>
@@ -154,6 +154,7 @@
         [༘⋆🖇️📖⋆｡ °✩🗒️]
       </a>
       <br><br>
+      <a class="link" href="mailto:samaga.avani@gmail.com">[email me]</a>
       <a class="link" href="https://www.instagram.com/_uncoolghoul_/" target="_blank">[instagram]</a>
       <a class="link" href="https://www.behance.net/avanisamaga1" target="_blank">[behance]</a>
       <a class="link" href="https://www.linkedin.com/in/avani-samaga/" target="_blank">[linkedin]</a>
@@ -166,41 +167,41 @@
   <div class="canvas">
 
    <!-- Gallery -->
-<div class="gallery">
+<div class="gallery" id="container">
 
   <div class="card">
-    <a class="link" href="https://uncoolghoul.mmm.page/playful-data"target="_blank">PLAYFUL DATA REPRESENTATIONS </a><br>
+    <a class="link" href="#" data-url="playfuldata.html">PLAYFUL DATA REPRESENTATIONS </a><br>
     <img src="images\womenscroll.png" class="img-a"/>
   </div>
 
   <div class="card">
-    <a class="link" href="https://uncoolghoul.mmm.page/half-court-collective"target="_blank">HALF-COURT COLLECTIVE </a>
+    <a class="link" href="#" data-url="hcc.html">HALF-COURT COLLECTIVE </a>
     <img src="images\dcs.JPG" class="img-center"/>
   </div>
 
   <div class="card">
-    <a class="link" href="https://www.thushuma.com/" target="_blank">THÚS HUMA</a><br>
+    <a class="link" href="#" data-url="thushuma.html">THÚS HUMA</a><br>
     <img src="images\bx1szx.jpg" class="img-a"/>
   </div>
 
   <div class="card">
-    <a class="link" href="https://www.behance.net/gallery/161529199/Trial-of-the-Tempted" target="_blank">TRIAL OF THE TEMPTED</a><br>
+    <a class="link" href="#" data-url="https://www.behance.net/gallery/161529199/Trial-of-the-Tempted" target="_blank">TRIAL OF THE TEMPTED</a><br>
     <img src="images\trial.png" class="img-b"/>
   </div>
 
   <div class="card">
-    <a class="link" href="https://www.behance.net/gallery/158715453/Memories-Scentography-and-other-Phantasms" target="_blank">MEMORIES, SCENTOGRAPHY, & OTHER PHANTASMS</a><br>
+    <a class="link" href="#" data-url="https://www.behance.net/gallery/158715453/Memories-Scentography-and-other-Phantasms" target="_blank">MEMORIES, SCENTOGRAPHY, & OTHER PHANTASMS</a><br>
     <img src="images\1yqyzj7_2.png" class="img-wide"/>
   </div>
 
   <div class="card">
-    <a class="link" href="https://www.behance.net/gallery/166365727/hereafter-Installation" target="_blank">HEREAFTER</a><br>
+    <a class="link" href="#" data-url="https://www.behance.net/gallery/166365727/hereafter-Installation" target="_blank">HEREAFTER</a><br>
     <img src="images\mushroom.jpg" class="img-a"/>
   </div>
 
   
   <div class="card">
-    <a class="link" href="https://www.behance.net/gallery/158934091/Yanomamo-A-Childs-Museum-of-Relationships" target="_blank">YANOMAMO 22</a><br>
+    <a class="link"href="#" data-url="https://www.behance.net/gallery/158934091/Yanomamo-A-Childs-Museum-of-Relationships" target="_blank">YANOMAMO 22</a><br>
     <img src="images\yanomamo.png" class="img-b"/>
   </div>
 
@@ -217,4 +218,17 @@
 
 
 </body>
+
+<script>
+document.getElementById("container").addEventListener("click", function(e) {
+  if (e.target.tagName === "A") {
+    e.preventDefault();
+
+    const url = e.target.getAttribute("data-url");
+
+    window.open(url, "popupWindow", "width=900,height=400");
+  }
+});
+</script>
+
 </html>

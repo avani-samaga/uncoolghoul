@@ -45,38 +45,14 @@ section {
   min-width: 280px;
 }
 
-.dot {
-  width: 16px;
-  height: 16px;
-  background: #a8c3d8;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
-
 .hero h1 {
   font-size: clamp(28px, 4vw, 48px);
   margin-bottom: 10px;
 }
 
-.link {
-  opacity: 0.6;
-  margin-bottom: 30px;
-}
-
-.meta p {
-  margin-bottom: 5px;
-}
-
 .description {
   margin: 25px 0;
-  opacity: 0.8;
   max-width: 500px;
-}
-
-.signature {
-  margin-top: 30px;
-  opacity: 0.6;
-  font-style: italic;
 }
 
 .image-placeholder {
@@ -105,7 +81,6 @@ section {
   background: #ccc;
 }
 
-/* REMOVE BOX LOOK */
 .card {
   padding: 0;
   border: none;
@@ -203,7 +178,7 @@ details p {
   padding-bottom: 10px;
 }
 
-/* 📱 MOBILE FIRST STACKING */
+/* MOBILE  */
 @media (max-width: 768px) {
   section {
     padding: 50px 6%;

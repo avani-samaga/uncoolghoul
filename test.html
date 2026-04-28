@@ -1,168 +1,262 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>/process</title>
-
+<title>projects</title>
 <link rel="stylesheet" href="css/main.css">
-<link rel="icon" href="images/favicon.ico">
+<link rel="icon" href="images\favicon.ico">
 <script src="script.js"></script>
-<script src="viewer.js"></script>
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap');
 
-/* ASCII */
-.ascii-bg {
-  position: absolute;
-  top: 8%;
-  right: 2%;
-  left: auto;
-  width: auto;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-  overflow: hidden;
+.hide {
+  opacity: 10%;
+  pointer-events: none; 
 }
 
-.ascii-bg pre {
-  font-family: monospace;
-  font-size: 12px;
-  line-height: 16px;
-  color: rgb(119,112,112);
-}
-
-/* MAIN LAYOUT */
-.container {
-  width: 700px;
-  margin: 0 auto;
-  padding-top: 8%;
-}
-
-.section {
-  margin-bottom: 60px;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 700px) {
-
-  .container {
-    width: 70%;
-    padding: 0 5%;
-    padding-top: 15%;
-  }
-
-  .ascii-bg pre {
-    font-size: 1.5vw;
-    line-height: 2.5vw;
-    opacity: 50%;
-  }
-}
 </style>
 </head>
 
 <body>
+  <ul style="z-index: 100;">
+    <li><a href="index.html">index</a></li>
+    <li><a class="active" href="#projects">projects</a></li>
+    <li><a href="about.html">about</a></li>
+    <li><a href="process.html">process</a></li>
+   <!-- <li><a href="life.html">misc.</a></li> -->
+    <li><a href="https://kirin.atabook.org/">guestbook</a></li>
+  </ul>
 
-<script>NekoType="orange"</script>
-<h1 id="nl">
-<script src="https://webneko.net/n20171213.js"></script>
-<a href="https://webneko.net">Neko</a>
-</h1>
+<div id="asciiart">
+  <table width="50px" style="z-index: -1; opacity: 65%;">
+    <tbody><tr>
+      <td width="500px" style="vertical-align: right;">
+        ⠀⠀⠀⠀⠀.　　　　　　　　　　⠀⠀⠀✦ ⠀ ⠀　　　　　　　　　　　　　　⠀⠀⠀⠀⠀* ⠀⠀⠀.　　　　　　　　　　. ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀✦⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀.　　　　　　　　　　　　　.　　　ﾟ .　　　　　　　　　　　　　. 　　　　　　　　　　　　　　　✦ 　　　　　,　　　　　　　.
 
-<!-- NAV -->
-<ul style="padding-top: 2%">
-  <li><a href="projects.html">projects</a></li>
-  <li><a href="about.html">about</a></li>
-  <li><a class="active" href="process.html">process</a></li>
-  <li><a href="blog.html">blog</a></li>
-  <li><a href="life.html">misc.</a></li>
-  <li><a href="https://kirin.atabook.org/">guestbook</a></li>
-</ul>
-<!-- ASCII -->
-<div class="ascii-bg">
-<pre>
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠀⠀⠀⡠⠴⠒⠋⠉⠉⠙⠡⣒⡢⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⢀⡴⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠤⡘⠣⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠒⠤⡑⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠪⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠾⢹⢨⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡟⠁⠸⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⢤⠤⣘⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⡇⠀⠘⠈⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡕⠊⠈⠉⠐⢿⡂⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠁⠃⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡍⠀⠀⠀⠀⠀⠀⢻⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠠⢤⠼⣼⣀⣠⡇⠀⠚⢢⢤⠤⣤⣄⣀⣀⣀⣀⡄⠀⠀⠀⠀⠻⣦⣨⠦⠀⠀⠀⢣⡇⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⠁⠀⠘⡧⠀⠆⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠉⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢣⠀⠀⠀⢸⠅⢔⡛⢣⣢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡠⠤⠒⢒⡟⠭⠭⢉⡉⠱⠲⡀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠳⣦⣰⢸⠀⠈⠉⠋⢸⡃⠀⠀⠀⠀⠀⠀⠀⣠⡔⠋⠁⠀⠀⢀⡚⠁⠀⠀⠀⠈⠳⣆⢱⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢹⠦⣤⠀⠀⣠⡞⠀⠀⠀⠀⠀⠀⢀⣺⠋⠀⠀⠀⠀⠀⡼⠁⠀⠀⠀⠀⠀⠀⢰⢼⠁
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⡆⠀⠉⠉⠈⠀⠀⠀⠀⠀⠀⠀⡾⠁⠀⠀⠀⠀⠀⣰⠍⠀⠀⠀⠀⠀⠀⠀⢨⢸⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠇⠀⠀⠀⠀⢀⣼⠃⠀⠀⠀⠀⠀⠀⠀⠀⡸⡹⠁
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⢀⣴⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⢀⢣⡁⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠗⠤⠔⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣜⠇⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠎⡏⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⣧⠏⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⠀⢀⣴⠗⠉⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣣⡾⠊⠁⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⣻⣵⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠖⠉⠀⢸⢸⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠁⠀⠀⡀⣼⠙⢦⡤⢤⣤⣄⣀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⠉⠀⠀⠉⠉⠉⠲⣀⡞⠉⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⢲⠖⠒⠋⠉⣾⢃⣆⠀⠀⠀⠀⠀⠀⢣⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⡿⠛⠀⠀⠀⠀⠀⠸⡏⠀⠈⢺⢆⠀⠀⠀⠀⣟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢾⠏⠁⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠈⢫⢢⠀⠀⠀⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢮⠏⠀⠀⠀⠀⠀⠀⠀⠀⢸⡀⠀⠀⠀⠈⢇⠇⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣗⡀⠀⠀⠀⠈⣿⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢦⡀⠀⠀⠀⢸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⣄⡀⠀⡸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠇⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠹⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⣶⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢗⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢽⣤⡀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠘⢳⠦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-</pre>
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+        　　　　　　*　　　　　　　　　　　.
+
+        .　　　　　　　　　　　　　. 　　✦⠀　   　　　,　　　　　　　　　*
+
+        　　　　　⠀　　　　⠀　　,
+
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀.　　　　　 　　⠀　　　⠀.　
+
+        　　˚　　　⠀　⠀  　　,　　　　　　.
+
+        　　　　　　　　　　　　　.
+
+        　　　　　　*⠀　　⠀  　　　　　⠀✦⠀　
+
+        　　　　　　*　　　　　　　　　　　　　　　　　　.
+
+        　　　　.　　　　.　　　⠀
+
+        　　　　　　　　　　　.
+
+        　　　　　　　
+
+        　　　˚　　　　　　　　ﾟ　　　　　.
+
+        　.⠀　　⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀,
+
+        　　　*　　⠀.
+
+        　　　　　.　　　　　　　　　　⠀✦
+
+        　˚　　　　　　　　　　　　　　*
+
+        .⠀ 　　　　　　　　　　.　　　　　　　　.
+
+        　　　　　✦⠀　   　　　,　　    　　　　　　　　.
+
+        ⠀⠀⠀⠀⠀⠀.　　　　　　　　　　⠀⠀⠀✦ ⠀ ⠀　　　　　　　　　　　　　　⠀⠀⠀⠀⠀* ⠀⠀⠀.　　　　　　　　　　. ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀✦⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀.　　　　　　　　　　　　　.　　　ﾟ .　　　　　　　　　　　　　. 　　　　　　　　　　　　　　　✦ 　　　　　,　　　　　　　.
+
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+        　　　　　　*　　　　　　　　　　　.
+
+        .　　　　　　　　　　　　　. 　　✦⠀　   　　　,　　　　　　　　　*
+
+        　　　　　⠀　　　　⠀　　,
+
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀.　　　　　 　　⠀　　　⠀.　
+
+        　　˚　　　⠀　⠀  　　,　　　　　　.
+
+        　　　　　　　　　　　　　.
+
+        　　　　　　*⠀　　⠀  　　　　　⠀✦⠀　
+
+        　　　　　　*　　　　　　　　　　　　　　　　　　.
+
+        　　　　.　　　　.　　　
+
+        　　　　　　　　　　　.
+
+        　　　　　　　
+
+        　　　˚　　　　　　　　ﾟ　　　　　.
+
+        　.⠀　⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀,
+
+        　　　　　✦⠀　   　　　
+        ⠀⠀⠀⠀⠀.　　　　　　　　　　⠀⠀⠀✦ ⠀ ⠀　　　　　　　　　　　　　　⠀⠀⠀⠀⠀* ⠀⠀⠀.　　　　　　　　　　. ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀✦⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀.　　　　　　　　　　　　　.　　　ﾟ .　　　　　　　　　　　　　. 　　　　　　　　　　　　　　　✦ 　　　　　,　　　　　　　.
+
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+        　　　　　　*　　　　　　　　　　　.
+
+        .　　　　　　　　　　　　　. 　　✦⠀　   　　　,　　　　　　　　　*
+
+        　　　　　⠀　　　　⠀　　,
+
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀.　　　　　 　　⠀　　　⠀.　
+
+        　　˚　　　⠀　⠀  　　,　　　　　　.
+
+        　　　　　　　　　　　　　.
+
+        　　　　　　*⠀　　⠀  　　　　　⠀✦⠀　
+
+        　　　　　　*　　　　　　　　　　　　　　　　　　.
+
+        　　　　.　　　　.　　　⠀
+
+        　　　　　　　　　　　.
+
+        　　　　　　　
+
+        　　　˚　　　　　　　　ﾟ　　　　　.
+
+        　.⠀　　⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀,
+
+        　　　*　　⠀.
+
+        　　　　　.　　　　　　　　　　⠀✦
+
+        　˚　　　　　　　　　　　　　　*
+
+        .⠀ 　　　　　　　　　　.　　　　　　　　.
+
+        　　　　　✦⠀　   　　　,　　    　　　　　　　　.
+
+
+
+        </td>
+      </tr>
+  </tbody></table>
 </div>
 
-<!-- CONTENT -->
-<div class="container">
-
-  <div class="section" style="text-align: left; padding-left: 10%;">
-    <h3>‧₊˚✧{approaching a problem}✧˚₊‧</h3>
-
-    as an exhibition designer, my process starts with<br>
-    the idea of <i>staging — </i><br><br>
-
-    (1) how can we communicate through an experiential lens?<br><br>
-    (2) how do we make sure our ideas are understood at a high level?<br><br>
-    (3) how can we design with intention?<br>
+  <div class="intro" id="filters" >
+    <p class="body" style="padding-top: 40%;">
+      <button data-filter="all" class="btn active"> all projects</button> i have worked on recently. 
+      some of these are 
+      <button data-filter ="branding" class="btn"> branding and website</button> projects, 
+      others are 
+      <button data-filter ="exhibit" class="btn"> exhibits</button> and 
+      <button data-filter ="workshops" class="btn"> workshops</button> i conducted.
+      aside from 
+      <button data-filter ="artdir" class="btn"> art direction</button>, 
+      i also 
+      <button data-filter ="illo" class="btn"> illustrate</button>.
+      <br><br>
+      my resume: 
+      <a class="link" href="images\avani's resume.pdf" download>
+        [༘⋆🖇️📖⋆｡ °✩🗒️]
+      </a>
+      <br><br>
+      <a class="link" href="mailto:samaga.avani@gmail.com">[email me]</a>
+      <a class="link" href="https://www.instagram.com/_uncoolghoul_/" target="_blank">[instagram]</a>
+      <a class="link" href="https://www.behance.net/avanisamaga1" target="_blank">[behance]</a>
+      <a class="link" href="https://www.linkedin.com/in/avani-samaga/" target="_blank">[linkedin]</a>
+  
   </div>
 
-  <div>
-    <img src="images/process.png" class="clickable-image" style="max-width: 50vw; text-align: center;" >
+
+<div class="wrapper">
+
+  <div class="canvas">
+
+   <!-- Gallery -->
+<div class="gallery" id="container">
+
+  <div class="item exhibit card">
+    <a class="link" href="#" data-url="playfuldata.html">PLAYFUL DATA REPRESENTATIONS </a><br>
+    <img src="images\womenscroll.png" class="img-a"/>
   </div>
 
-  <div class="section" style="text-align: right; padding-right: 8%;">
-    <br><br><h3>‧₊˚✧{executing ideas}✧˚₊‧</h3>
-
-    coherence and concreteness is the essence of a story.<br>
-    without a solid and <i>related</i> medium that interacts & supplements<br>
-    the concept, the experience will always be lackluster.<br><br>
-
-    (1) finding a story<br><br>
-    (2) applying concept to medium, and medium to concept<br><br>
-    (3) process of iteration<br>
+  <div class="item workshops card">
+    <a class="link" href="#" data-url="hcc.html">HALF-COURT COLLECTIVE </a>
+    <img src="images\dcs.JPG" class="img-center"/>
   </div>
 
-  <!-- SYMBOL -->
-  <div style="text-align:center; padding-bottom: 15%;">
-    ⋆♤˚⟡˖ ࣪🃁 🂺 ˖⟡˚ ♤ ⋆
+  <div class="item branding artdir card">
+    <a class="link" href="#" data-url="thushuma.html">THÚS HUMA</a><br>
+    <img src="images\bx1szx.jpg" class="img-a"/>
+  </div>
+
+  <div class="item exhibit artdir card">
+    <a class="link" href="#" data-url="https://www.behance.net/gallery/161529199/Trial-of-the-Tempted" target="_blank">TRIAL OF THE TEMPTED</a><br>
+    <img src="images\trial.png" class="img-b"/>
+  </div>
+
+  <div class="item exhibit artdir card">
+    <a class="link" href="#" data-url="https://www.behance.net/gallery/158715453/Memories-Scentography-and-other-Phantasms" target="_blank">MEMORIES, SCENTOGRAPHY, & OTHER PHANTASMS</a><br>
+    <img src="images\1yqyzj7_2.png" class="img-wide"/>
+  </div>
+
+  <div class="item exhibit card">
+    <a class="link" href="#" data-url="https://www.behance.net/gallery/166365727/hereafter-Installation" target="_blank">HEREAFTER</a><br>
+    <img src="images\mushroom.jpg" class="img-a"/>
+  </div>
+
+  
+  <div class="item exhibit illo card">
+    <a class="link" href="#" data-url="https://www.behance.net/gallery/158934091/Yanomamo-A-Childs-Museum-of-Relationships" target="_blank">YANOMAMO 22</a><br>
+    <img src="images\yanomamo.png" class="img-b"/>
+  </div>
+
+  <!--
+  <div class="card">
+  <p>NEW PROJECT</p>
+  <img src="images\new.jpg" class="img-a"/>
+  </div>
+  -->
+</div>
+
   </div>
 </div>
+
 
 </body>
+
+<script>
+document.getElementById("container").addEventListener("click", function(e) {
+  if (e.target.tagName === "A") {
+    e.preventDefault();
+
+    const url = e.target.getAttribute("data-url");
+
+    window.open(url, "popupWindow", "width=900,height=400");
+  }
+});
+
+document.getElementById("filters").addEventListener("click", function(e) {
+  if (e.target.tagName !== "BUTTON") return;
+
+  const category = e.target.getAttribute("data-filter");
+  const items = document.querySelectorAll(".item");
+
+  items.forEach(item => {
+    if (category === "all") {
+      item.classList.remove("hide");
+    } else {
+      item.classList.toggle("hide", !item.classList.contains(category));
+    }
+  });
+});
+</script>
+
 </html>
