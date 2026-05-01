@@ -36,7 +36,7 @@ body {
 /* BOX = 3x3 CANVAS */
 .box {
   position: relative;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1.2;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -52,10 +52,10 @@ body {
   justify-self: center;
   align-self: center;
 
-  /* dither effect instead of grayscale */
+  /* dither effect */
   image-rendering: pixelated;
+  filter: sepia(40%);
   cursor: pointer;
-  transform: rotate(var(--rot, 0deg));
 }
 
 /* TEXT MODE */
@@ -220,7 +220,7 @@ href="https://webneko.net">Neko</a></h1>
       <img src="images\misc\4.jpg">
     </div>
 
-    <div class="box" data-count="5" data-seed="box4">
+    <div class="box" data-count="5" data-seed="box5">
       <img src="images\misc\6.jpg">
       <img src="images\misc\18.jpg">
       <img src="images\misc\7.jpg">

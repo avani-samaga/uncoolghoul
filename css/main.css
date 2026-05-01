@@ -311,6 +311,7 @@ color: #9b39dc;
   position: relative;
   font-size: 14px;
   line-height: 1.4;
+  transform: translateY(0) !important;
 }
 
 /* IMAGES */
@@ -328,10 +329,6 @@ color: #9b39dc;
     margin-top: 150px;
   }
 
-  /* reduce offsets */
-  .card {
-    transform: translateY(0) !important;
-  }
 }
 
 /*  MOBILE */
