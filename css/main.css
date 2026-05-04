@@ -7,7 +7,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    background-color: #e5e5f7;
+    background-color: #f2f2fc;
     margin: 0;
   font-size: 0.8rem;
   line-height: 1.4;
@@ -231,11 +231,11 @@ ul {
   margin: 0;
   padding: 1%;
   z-index: 100;
-  width: 70px;
+  width: 71px;
   height: 170px; 
   position: fixed; 
   overflow: auto; 
-  background-color: #e5e5f7;
+  background-color: #f2f2fc;
 }
 
 li a {
@@ -264,7 +264,8 @@ li a:hover:not(.active) {
 }
 .btn {
   font-family: "Xanh Mono", monospace;
-  border-color:rgb(237, 231, 255);
+  border-color:rgb(239, 236, 249);
+  background-color: #eaeaf5;
   outline: none;
   padding: 2px 6px;
   cursor: pointer;
@@ -290,7 +291,6 @@ color: #9b39dc;
   width: fit-content;          
   max-width: 350px;              
   text-align: left;
-  font-size: 13px;
   margin-left: 50%;
   position: relative;
   transform: translateX(-50%);
@@ -303,7 +303,7 @@ color: #9b39dc;
   gap: 120px 80px;
   margin-top: 20vh;
 
-  padding: 0 6%;
+  padding: 0 7%;
   position: relative;
 }
 
