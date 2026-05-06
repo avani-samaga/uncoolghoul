@@ -21,6 +21,10 @@ ul {
   z-index: 100;
 }
 
+summary {
+  text-transform: capitalize;
+}
+
 /* GLOBAL SPACING */
 section {
   padding-left: 8%;
@@ -103,6 +107,7 @@ section {
 .row span {
   min-width: 110px;
   opacity: 0.6;
+  text-transform: capitalize;
 }
 
 .row p,
