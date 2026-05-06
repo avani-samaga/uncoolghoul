@@ -14,7 +14,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 ul {
   padding-top: 2%;
@@ -23,7 +23,10 @@ ul {
 
 /* GLOBAL SPACING */
 section {
-  padding: 80px 8%;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-bottom: 8%;
+  padding-top: 2%
 }
 
 /* HERO */
@@ -33,6 +36,7 @@ section {
   align-items: center;
   gap: 60px;
   flex-wrap: wrap;
+  padding-top: 6%;
 }
 
 .hero-left {
@@ -57,8 +61,7 @@ section {
 
 .image-placeholder {
   width: 100%;
-  height: 300px;
-  background: linear-gradient(135deg, #f8cdda, #fcb69f);
+  height: 10px;
 }
 
 /* PACKAGE */
@@ -77,8 +80,7 @@ section {
 
 .image-large {
   width: 100%;
-  height: 450px;
-  background: #ccc;
+  height: 100px;
 }
 
 .card {
@@ -99,7 +101,7 @@ section {
 }
 
 .row span {
-  min-width: 140px;
+  min-width: 110px;
   opacity: 0.6;
 }
 
