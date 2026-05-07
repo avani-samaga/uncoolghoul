@@ -131,6 +131,11 @@ a.link:active{
     color: rgb(106, 116, 111);
 }
 
+.image-link img:hover {
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
 /* FULL VIEWER OVERLAY */
 /* FULL OVERLAY */
 .viewer {

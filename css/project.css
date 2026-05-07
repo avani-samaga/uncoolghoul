@@ -38,7 +38,7 @@ section {
 .hero {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;  
   gap: 60px;
   flex-wrap: wrap;
   padding-top: 6%;
@@ -241,3 +241,7 @@ a.link:active{
     color: rgb(106, 116, 111);
 }
 
+.image-link img:hover {
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
