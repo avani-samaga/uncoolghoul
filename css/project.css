@@ -97,6 +97,19 @@ section {
   margin-bottom: 30px;
 }
 
+div.scroll-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  cursor: grab;
+  padding: 10px;
+}
+
+div.scroll-container img {
+  padding: 10px;
+  width: 40vw;
+}
+
 /* CLEAN ROW LAYOUT */
 .row {
   display: flex;
