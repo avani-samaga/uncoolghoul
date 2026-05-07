@@ -84,6 +84,8 @@ body {
 #blinkie {
   width: 150px;
   height: 20px;
+  cursor: default; 
+  pointer-events: none;
 }
 
 /* for general text */

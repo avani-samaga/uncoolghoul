@@ -430,6 +430,7 @@ document.querySelectorAll(".box").forEach((box, i) => {
   const list = boxData[i];
 
   imgs.forEach((img, idx) => {
+    if (img.closest(".blinkie")) return; // ignore blinkie images
     img.addEventListener("click", () => {
       openViewer(list, idx);
     });
