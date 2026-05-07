@@ -80,6 +80,12 @@ body {
   color: rgb(119, 112, 112);
 }
 
+
+#blinkie {
+  width: 150px;
+  height: 20px;
+}
+
 /* for general text */
 #general {
     font-size: 13px;
