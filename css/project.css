@@ -227,7 +227,7 @@ details p {
 }
 
 .text-placeholder {
-  text-align: center;
+  text-align: left;
   font-style: italic;
   color: #666;
   padding: 10px;
