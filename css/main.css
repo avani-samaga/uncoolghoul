@@ -313,7 +313,7 @@ color: #9b39dc;
 .gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 120px 80px;
+  gap: 70px 60px;
   margin-top: 20vh;
 
   padding: 0 7%;
