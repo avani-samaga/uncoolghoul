@@ -1,0 +1,268 @@
+<!DOCTYPE html><html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>/process</title>
+<link rel="stylesheet" href="css/project.css">
+<link rel="icon" href="images\favicon.ico">
+<script src="script.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap');
+
+/* HERO AND PACKAGE IMAGES */
+.hero,
+.package {
+  display: flex;
+  flex-wrap: wrap;         /* allow stacking on small screens */
+  gap: 2rem;
+}
+
+.hero-left,
+.hero-right,
+.package-left,
+.package-right {
+  flex: 1 1 300px;         /* flexible width, min 300px */
+  min-width: 0;            /* prevents overflow */
+}
+
+.image-placeholder img,
+.image-large img {
+  width: 100%;             /* always fill parent width */
+  max-width: 50%;         /* never exceed parent */
+  height: auto;            /* keep aspect ratio */
+  display: block;
+  object-fit: contain;     /* optional, ensures images don't stretch */
+}
+
+/* FOR SCALING LARGE SCREENS */
+@media (min-width: 1200px) {
+  .hero-left, .hero-right,
+  .package-left, .package-right {
+    flex: 1 1 45%;          /* side by side on large screens */
+  }
+}
+
+/* SMALL SCREENS */
+@media (max-width: 700px) {
+  .hero-left, .hero-right,
+  .package-left, .package-right {
+    flex: 1 1 100%;         /* stack vertically */
+  }
+
+  .image-placeholder img,
+  .image-large img {
+    max-width: 90%;         /* shrink more on mobile */
+  }
+}
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-left">
+      <h2>{ THÚS HUMA }</h2><BR>
+
+      <div opacity="60">
+        <p><i>The Space at 9/2</i></p><br>
+      </div>
+
+      <p class="description">
+        a branding and website project done for Huma Sulaiman, an interior designer and aesthete,<br>
+        for her gallery space in West Hollywood,CA.
+      </p>
+      <i opacity="80%">
+      <p>done with my coworkers at <a class="link" href="https://www.linkedin.com/company/slow-studio/?originalSubdomain=in" target="_blank">The Space at 9/2</a></i></p>
+    </div>
+
+    <div class="hero-right">
+      <div class="image-placeholder">
+        <img src="images\bx1szx.jpg">
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGE -->
+  <section class="package">
+    <div class="package-left">
+      <div class="image-large" style="padding-top: 20%; width: 70vw;">
+        <img src="images\projects\thushuma\visuals.gif">
+      </div>
+    </div>
+
+    <div class="package-right" style="padding-top: 10%;">
+      <div class="card">
+        <h3>ABOUT ✧˚₊‧</h3>
+
+        <div class="row">
+          <span>GOAL /</span>
+          <p>creating a well rounded and intimate brand identity and website for the showspace,<br>
+        based on Huma Sulaiman's eye for design and nature, and representative of <br>
+    the worldy decorative arts being assimilated.</p>
+        </div>
+
+        <div class="row">
+          <span>DELIVERABLES /</span>
+          <ul>
+            <li>branding - logomark, logotype, brand guidelines</li>
+            <li>visual identity - colors, elements, brand identity</li>
+            <li>content - brand name, content writing</li>
+            <li>collaterals - business cards, envelopes, etc</li>
+          </ul>
+        </div>
+
+        <div class="row">
+          <span>TIMELINE /</span>
+          <p>1 year</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="package">
+    <div class="package-left">
+      <div class="card">
+        <h3>[ VISUAL IDENTITY ]</h3>
+
+        <div class="row">
+          <span>THE NAME /</span>
+          <p>Derived from the frisian word for "home," 
+            'thús' embodies the essence of a deeply personal space. 
+            it is a reflection of connection, comfort, and storytelling: 
+            a sanctuary where life unfolds in harmony with artistry.</p>
+        </div><br>
+        <div class="row">
+          <span>THE LOGO /</span>
+          <p>a representation of a space, derived from type.
+            concise yet evocative, to match the brand.
+          </p>
+          </div>
+        </div><br>
+
+        <div class="row">
+            <a class="link" style="padding-left: 150px;" href="https://www.thushuma.com/" target="_blank"><strong>visit the website here.</strong></a>
+        </div>
+      </div>
+
+          <div class="package-right">
+      <div class="image-large" style="height: 370px; display: flex;">
+        <img src="images\projects\thushuma\Untitled.png" style="max-width: 16vw;">
+        <img src="images\projects\thushuma\th1.jpg" style="max-width: 18vw;">
+      </div>
+    </div>
+    </div>
+  </section>
+
+   <section class="package">
+    <div class="package-right">
+      <div class="card">
+        <h3>[ BRANDING ]</h3>
+
+        <div class="row">
+          <span>IDENTITY /</span>
+          <p>the identity of the brand was developed to showcase the sophistication and timelessness of the 
+            works of art being showcased.<br>
+          </p>
+        </div>
+
+        <div class="row">
+          <span></span>
+          <p>The branding draws inspiration from the classic elegance and distinction
+             of serif typefaces, chosen to evoke a sense of luxury. <br><br>
+            The delicate curves and bold strokes of the serifs breathe life into the brand,
+             evoking a sense of heritage authority, yet remaining modern.</p>    
+        </div>
+      </div>
+    </div>
+        <div class="package-left" style="padding-left: 10%;">
+      <div class="image-large">
+        <img src="images\projects\thushuma\humes elements gif.gif">
+      </div>
+    </div>
+  </section>
+
+  <section class="package">
+   
+    <h3>VISUALS /</h3>
+    <p>how the branding comes together.<br></p>
+    <p>scroll --></p>
+        <div class="scroll-container" style="overflow-x: auto; overflow-y: hidden; white-space: nowrap; cursor: grab;">  
+        <img src="images\projects\thushuma\3e.jpg" style="width: 30vw;">
+        <img src="images\projects\thushuma\3f.jpg" style="width: 30vw;">
+        <img src="images\projects\thushuma\Frame 127.png" style="width: 30vw; height: 85vh;"> 
+        <img src="images\projects\thushuma\3c.jpg" style="width: 30vw;">
+        <img src="images\projects\thushuma\th2.jpg" style="width: 30vw;">
+        <img src="images\projects\thushuma\Frame 69.png" style="width: 30vw;">
+        </div>
+</section>
+
+   <section class="package">
+    <div class="package-right">
+      <div class="card">
+        <h3>[ OUTCOME ]</h3>
+
+        <div class="row">
+          <span>WEBSITE /</span>
+          <p>The digital ecosystem for Thús Huma was built as an extension of the showspace itself. 
+            The website navigates through discovery rather than catalogue logic, 
+            with section headings and copy that carry the same tonal register as the space: 
+            here & now, gathered worlds, an everyday life of design.<br>
+          </p>
+        </div>
+
+        <div class="row">
+          <span>COLLATERALS /</span>
+          <p>Print for Thús Huma was designed to be kept, a keepsake over just paper. 
+            The showspace brochure holds directions alongside design philosophy, 
+            and visit information alongside curatorial intent, each given equal weight.</p>    
+        </div>
+      </div>
+    </div>
+        <div class="package-left">
+      <div class="image-large">
+        <img src="images\projects\thushuma\agcA057.png" style="max-width: 40vw; max-height: 50vh;">
+      </div>
+    </div>
+  </section>
+
+<section class="package" style="padding-top: 5%;">
+  <div class="grid-3x">
+    <!-- Column 1 -->
+    <div class="grid-item">
+      <img src="images\projects\thushuma\323.jpg">
+    </div>
+
+    <!-- Column 2 -->
+    <div class="grid-item">
+      <img src="images\projects\thushuma\331.jpg">
+    </div>
+
+    <div class="grid-item">
+      <img src="images\projects\thushuma\330.jpg">
+    </div>
+  </div>
+</section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <h3>OTHER INFO ✧˚₊‧</h3><br>
+
+    <div class="faq-grid">
+      <details>
+        <summary>THE SPACE AT 9/2</summary>
+        <p>The Space At 9/2 worked with Thús Huma across concept, 
+            naming, brand strategy, visual identity, website design 
+            and content, print collaterals, and social media communications. 
+        </p>
+      </details>
+
+      <details>
+        <summary>BRAND CURRENTLY</summary>
+        <p>he space opened in West Hollywood in October 2025, 
+            in an intimate evening along with some of the artists 
+            with works housed within the experiential space.</p>
+      </details>
+    </div>
+  </section>
+
+</body>
+</html>
