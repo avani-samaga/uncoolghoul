@@ -199,6 +199,148 @@ details p {
   padding-bottom: 10px;
 }
 
+.grid-3x {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.grid-item {
+  position: relative;
+  /* aspect-ratio: 1 / 1;  */
+  overflow: hidden;
+  background-color: #f8f8f800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-placeholder {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  padding: 10px;
+}
+
+/* FULL VIEWER OVERLAY */
+.viewer {
+  position: fixed;
+  inset: 0; /* take full screen */
+  background: rgba(0, 0, 0, 0.7); /* darker overlay for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* FULL OVERLAY */ 
+.viewer { 
+  position: fixed; 
+  inset: -5%; 
+  background: rgba(255, 255, 255, 0.136); 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  z-index: 999; 
+} 
+
+/* IMAGE FRAME (center) */ 
+.viewer-inner { 
+  width: 90vw; 
+  height: 90vh; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  background: rgba(255, 255, 255, 0.552); 
+  border: 1px solid #000; 
+  position: relative; 
+} 
+/* IMAGE */ 
+.viewer-inner img { 
+  max-width: 100%; 
+  max-height: 100%; 
+  object-fit: contain; 
+} 
+/* CONTROLS */
+ /* CLOSE */ 
+ .close-btn { 
+  position: absolute; 
+  top: 3vh; 
+  right: 3vw; 
+} 
+/* BACK */ 
+.back-btn { 
+  position: absolute; 
+  left: 3vw; top: 50%; 
+} 
+/* NEXT */ 
+.next-btn { 
+  position: absolute; 
+  right: 3vw; 
+  top: 50%; 
+} 
+
+/* MOBILE */ 
+@media (max-width: 700px) { 
+  .grid { 
+    grid-template-columns: 1fr;
+     gap: 40px; 
+    } 
+    .box { 
+      aspect-ratio: auto; 
+      height: 500px; 
+    } 
+    .box img { 
+      width: 80%; 
+    } 
+    .viewer-inner { 
+      width: 90vw;
+       height: 90vh; 
+      } 
+      .close-btn { 
+        top: 3vh; 
+        right: 4vw; 
+      } 
+      .back-btn, .next-btn { 
+        top: auto; 
+        transform: none; 
+      } 
+      .back-btn { 
+        position: absolute; 
+        bottom: 3.5vh; 
+        left: 10vw; 
+      } 
+      .next-btn { 
+        position: absolute; 
+        bottom: 3.5vh; 
+        right: 10vw; 
+      } 
+    }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid-3x {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-3x {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+}
+
 /* MOBILE  */
 @media (max-width: 768px) {
   section {

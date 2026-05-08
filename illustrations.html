@@ -1,0 +1,201 @@
+<!DOCTYPE html><html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>/process</title>
+<link rel="stylesheet" href="css/project.css">
+<link rel="icon" href="images\favicon.ico">
+<script src="script.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap');
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-left">
+    <h2>{ ART & ILLUSTRATIONS }</h2><br>
+    <div style="opacity: 0.6;">
+      <p><i>by Avani</i></p><br>
+    </div>
+    <p class="description">
+      an assortment of art i have done for multiple projects. <br>
+      it's a showcase of the kind of illustrating i do.
+    </p>
+  </div> <!-- close hero-left -->
+
+  <div class="hero-right">
+    <div class="image-placeholder">
+      <img src="images\tapri.png" style="max-width: 30vw;">
+    </div>
+  </div>
+</section>
+
+<section class="package" style="padding-top: 11%;">
+  <h3>dungeons & dragons</h3>
+  <p>characters made for my game group's tabletop roleplaying stories.</p>
+
+  <div class="grid-3x">
+    <!-- Column 1 -->
+    <div class="grid-item">
+      <img src="images\projects\illos\1.jpg">
+    </div>
+
+    <!-- Column 2 -->
+    <div class="grid-item">
+      <img src="images\projects\illos\8.jpg">
+    </div>
+
+    <div class="grid-item">
+      <img src="images\projects\illos\2.jpg" style ="transform: scaleX(-1)">
+    </div>
+
+    <!-- Next row -->
+    <div class="grid-item">
+      <img src="images\projects\illos\5.jpg">
+    </div>
+    <div class="grid-item">
+      <div class="text-placeholder">some of these are my own characters for different campaigns, some are my interpretation of my friends characters.</div>
+    </div>
+  </div>
+</section>
+
+<section class="package" style="padding-top: 11%;">
+  <h3>spaces</h3>
+  <p>spatial explorations done for fun and practice.</p>
+
+  <div class="grid-3x">
+    <!-- Column 1 -->
+    <div class="grid-item">
+      <img src="images\projects\illos\3.jpg">
+    </div>
+
+    <!-- Column 2 -->
+    <div class="grid-item">
+      <img src="images\projects\illos\4.jpg">
+    </div>
+
+    <!-- Column 3 (text placeholder) -->
+    <div class="grid-item">
+      <img src="images\projects\illos\space1.jpg">
+    </div>
+
+    <!-- Next row -->
+    <div class="grid-item">
+      <div class="text-placeholder">practice viewing spaces, and applying movement and character to them.</div>
+    </div>
+
+    <div class="grid-item">
+      <img src="images\projects\illos\space2.jpg">
+    </div>
+
+  </div>
+</section>
+
+<section class="package" style="padding-top: 11%;">
+  <h3>comics</h3>
+  <p>a few pages made for a children's coloring book, based on indian tribal(munda) stories</p>
+
+  <div class="grid-3x">
+    <!-- Column 1 -->
+    <div class="grid-item">
+      <img src="images\projects\illos\6.jpg">
+    </div>
+
+    <!-- Column 2 -->
+    <div class="grid-item">
+      <img src="images\projects\illos\7.jpg">
+    </div>
+
+    <!-- Column 3 (text placeholder) -->
+    <div class="grid-item">
+      <img src="images\projects\illos\9.jpg">
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+
+/* Viewer logic */
+document.addEventListener("DOMContentLoaded", () => {
+  const boxDataGrid = [];
+  const gridItems = document.querySelectorAll(".grid-3x .grid-item");
+
+  gridItems.forEach((item) => {
+    const img = item.querySelector("img");
+    if (img) boxDataGrid.push(img); // only images
+  });
+
+  let currentIndex = 0;
+
+  function openViewer(list, index) {
+    currentIndex = index;
+
+    document.querySelector(".viewer")?.remove();
+
+    const viewer = document.createElement("div");
+    viewer.className = "viewer";
+
+    const inner = document.createElement("div");
+    inner.className = "viewer-inner";
+
+    const img = document.createElement("img");
+    img.src = list[currentIndex].src;
+
+    const controls = document.createElement("div");
+    controls.className = "controls";
+    controls.innerHTML = `
+      <a class="link back-btn">[back]</a>
+      <a class="link next-btn">[next]</a>
+      <a class="link close-btn">[close]</a>
+    `;
+
+    inner.appendChild(controls);
+    inner.appendChild(img);
+    viewer.appendChild(inner);
+    document.body.appendChild(viewer);
+
+    // close
+    controls.querySelector(".close-btn").onclick = (e) => {
+      e.preventDefault();
+      viewer.remove();
+    };
+
+    // next
+    controls.querySelector(".next-btn").onclick = (e) => {
+      e.preventDefault();
+      currentIndex = (currentIndex + 1) % list.length;
+      img.src = list[currentIndex].src;
+    };
+
+    // back
+    controls.querySelector(".back-btn").onclick = (e) => {
+      e.preventDefault();
+      currentIndex = (currentIndex - 1 + list.length) % list.length;
+      img.src = list[currentIndex].src;
+    };
+
+    // click outside closes
+    viewer.onclick = (e) => {
+      if (e.target === viewer) viewer.remove();
+    };
+
+    // ESC close
+    document.onkeydown = (e) => {
+      if (e.key === "Escape") viewer.remove();
+    };
+  }
+
+  // attach click events
+  gridItems.forEach((item) => {
+    const img = item.querySelector("img");
+    if (!img) return; // skip placeholders
+    img.addEventListener("click", () =>
+      openViewer(boxDataGrid, boxDataGrid.indexOf(img))
+    );
+  });
+});
+
+</script>

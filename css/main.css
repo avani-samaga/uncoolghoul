@@ -152,8 +152,8 @@ a.link:active{
 
 /* IMAGE FRAME (center) */
 .viewer-inner {
-  width: 60vw;
-  height: 60vh;
+  width: 90vw;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
