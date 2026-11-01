@@ -14,7 +14,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 ul {
   padding-top: 2%;
@@ -370,7 +370,7 @@ details p {
 a.link{
     display: inline-block;
     vertical-align: middle;
-    font-size: 13px;
+    font-size: 1rem;
     padding: 5px;
 }
 
