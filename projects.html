@@ -272,17 +272,31 @@
 document.getElementById("container").addEventListener("click", function(e) {
 
   const link = e.target.closest("a");
-
   if (!link) return;
+
+  const url = link.getAttribute("data-url");
+  if (!url) return;
 
   e.preventDefault();
 
-  const url = link.getAttribute("data-url");
+  if (url.includes("behance.net")) {
+    window.open(
+      url,
+      "behancePopup",
+      "width=1400,height=750,resizable=yes,scrollbars=yes"
+    );
+  } else {
+    window.open(
+      url,
+      "popupWindow",
+      "width=1100,height=750,resizable=yes,scrollbars=yes"
+    );
+  }
 
-  window.open(url, "popupWindow", "width=900,height=400");
 });
 
 document.getElementById("filters").addEventListener("click", function(e) {
+
   if (e.target.tagName !== "BUTTON") return;
 
   const category = e.target.getAttribute("data-filter");
@@ -295,6 +309,7 @@ document.getElementById("filters").addEventListener("click", function(e) {
       item.classList.toggle("hide", !item.classList.contains(category));
     }
   });
+
 });
 </script>
 
