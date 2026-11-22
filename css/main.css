@@ -277,7 +277,8 @@ li a:hover:not(.active) {
 }
 .btn {
   font-family: "Xanh Mono", monospace;
-  border-color:rgb(239, 236, 249);
+  font-size: 1rem;
+  border-color: rgb(239, 236, 249);
   background-color: #eaeaf5;
   outline: none;
   padding: 2px 6px;
